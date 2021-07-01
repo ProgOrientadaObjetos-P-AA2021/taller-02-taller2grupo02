@@ -14,74 +14,80 @@ import java.io.Serializable;
 
 public abstract class PasajeInterCantonal implements Serializable {
 
-    protected String nombrePasajero;
-    protected String cedula;
-    protected String origen;
-    protected String destino;
-    protected double numDistancia;
+    protected String Nombre;
+    protected String Cedula;
+    protected String Origen;
+    protected String Destino;
+    protected double distanciaKM;
     protected double tarifaBase;
     protected double valorPasaje;
 
-    public PasajeInterCantonal(String nombrePasajero, String cedula, String origen, String destino, double numDistancia, double tarifaBase) {
-        this.nombrePasajero = nombrePasajero;
-        this.cedula = cedula;
-        this.origen = origen;
-        this.destino = destino;
-        this.numDistancia = numDistancia;
-        this.tarifaBase = tarifaBase;
-    } 
-       
-    public void establecerNombrePasajero(String tipo){
-        nombrePasajero = tipo;
+    public PasajeInterCantonal(String nombre, String cedula, String origen, String distancia,
+            double distanciakm, double tarifa) {
+        Nombre = nombre;
+        Cedula = cedula;
+        Origen = origen;
+        Destino = distancia;
+        distanciaKM = distanciakm;
+        tarifaBase = tarifa;   
     }
-    public String obtenerNombrePasajero(){
-        return nombrePasajero;
+
+    public void establecerNombre(String n) {
+        Nombre = n;
     }
-    
-    public void establecerCedula(String tipo){
-        cedula = tipo;
+
+    public void establecerCedula(String n) {
+        Cedula = n;
     }
-    public String obtenerCedula(){
-        return cedula;
+
+    public void establecerOrigen(String n) {
+        Origen = n;
     }
-    
-    public void establecerOrigen(String tipo){
-        origen = tipo;
+
+    public void establecerDestino(String n) {
+        Destino = n;
     }
-    public String obtenerOrigen(){
-        return origen;
+
+    public void establecerDistanciKm(double n) {
+        distanciaKM = n;
     }
-    
-    public void establecerDestino(String tipo){
-        destino = tipo;
+
+    public void establecerTarifaBase(double n) {
+        tarifaBase = n;
     }
-    public String obtenerDestino(){
-        return destino;
+
+    public abstract void establecerValPasaje();
+
+    public String obtenerNombre() {
+        return Nombre;
     }
-    
-    public void establecerNumDistancia(double tipo){
-        numDistancia = tipo;
+
+    public String obtenerCedula() {
+        return Cedula;
     }
-    public double obtenerNumDistancia(){
-        return numDistancia;
+
+    public String obtenerOrigen() {
+        return Origen;
     }
-    
-    public void establecerTarifaBase(double tipo){
-        tarifaBase = tipo;
+
+    public double obtenerDistanciaKm() {
+        return distanciaKM;
     }
-    public double obtenerTarifaBase(){
+
+    public double obtenerTarifaBase() {
         return tarifaBase;
     }
-    public abstract void establecerValorPasaje();
-     
-    public double obtenerValorPasaje(){
+
+    public double obtenerValPasaje() {
         return valorPasaje;
     }
 
     @Override
-    public String toString(){
-        return String.format("Pasaje.");
+    public String toString() {
+        String cadena = String.format("\nNombre: %s\nCedula: %s\nOrigen: %s\n"
+                + "Destino: %s\nDistancia en Km: %.2f\nTarifa Base: %.2f", 
+                Nombre, Cedula, Origen, Destino, distanciaKM, tarifaBase);
+        return cadena;
     }
-    
-    
+
 }

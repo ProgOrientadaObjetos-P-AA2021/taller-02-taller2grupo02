@@ -105,3 +105,4 @@ public class LecturaArchivoSecuencial {
         } // fin de catch
     } // fin del método cerrarArchivo
 }
+

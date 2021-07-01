@@ -12,13 +12,12 @@ import java.util.ArrayList;
 import paquete2.PasajeInterCantonal;
 
 
-
 public class EscrituraArchivoSecuencial {
 
     private String nombreArchivo;
     private ObjectOutputStream salida; // envía los datos a un archivo
     private PasajeInterCantonal registro;
-    private ArrayList <PasajeInterCantonal> lista;
+    private ArrayList<PasajeInterCantonal> lista;
 
     public EscrituraArchivoSecuencial(String nombreArc) {
         nombreArchivo = nombreArc;

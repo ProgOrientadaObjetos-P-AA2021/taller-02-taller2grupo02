@@ -11,31 +11,26 @@ import java.io.Serializable;
  *
  * @author reroes
  */
-public class PasajeTerceraEdad extends PasajeInterCantonal {
+public class PasajeTerceraEdad extends PasajeInterCantonal implements Serializable{
 
-    public PasajeTerceraEdad(String nombrePasajero, String cedula, String origen, String destino, double numDistancia, double tarifaBase) {
-        super(nombrePasajero, cedula, origen, destino, numDistancia, tarifaBase);
+    public PasajeTerceraEdad(String nombre, String cedula, String origen, String distancia, 
+            double distanciakm, double tarifa) {
+        super(nombre, cedula, origen, distancia, distanciakm, tarifa);
     }
-    
+
     @Override
-    public void establecerValorPasaje(){
-        valorPasaje = (numDistancia*0.5)+(tarifaBase/2);
+    public void establecerValPasaje() {
+        valorPasaje = ((distanciaKM * 0.5) + (tarifaBase/2));
     }
     
     @Override
     public String toString() {
-        String cadena = String.format("Pasaje Transporte Tercera Edad: \n"
-                + "Nombre del pasajero: %s\n"
-                + "Cédula: %s\n"
-                + "Origen: %s\n"
-                + "Destino: %s\n"
-                + "Número de distancia: %.2f\n"
-                + "Tarifa base: %.2f\n"
-                + "Valor pasaje: %.2f\n", 
-                obtenerNombrePasajero(),obtenerCedula(),obtenerOrigen(),
-                obtenerDestino(),obtenerNumDistancia(),obtenerTarifaBase(),
-                obtenerValorPasaje()); 
+        String cadena =  String.format("%s\nValor del pasaje: %.2f\n", 
+                super.toString(), 
+                obtenerValPasaje());
         return cadena;
+        
     }
-    
 }
+
+

@@ -11,44 +11,37 @@ import java.io.Serializable;
  *
  * @author reroes
  */
-public class PasajeMenorEdad extends PasajeInterCantonal 
-        implements Serializable{
-    
-    private double atributo;
+public class PasajeMenorEdad extends PasajeInterCantonal
+        implements Serializable {
 
-    public PasajeMenorEdad(double atributo, String nombrePasajero, 
-            String cedula, String origen, String destino, 
-            double numDistancia, double tarifaBase) {
-        super(nombrePasajero, cedula, origen, destino, numDistancia, tarifaBase);
-        this.atributo = atributo;
-    }  
-    
-    public void establecerAtributo(double tipo){
-        atributo = tipo;
+    private double Porcentaje;
+
+    public PasajeMenorEdad(String nombre, String cedula, String origen, String distancia,
+            double distanciakm, double tarifa, double porcentaje) {
+        super(nombre, cedula, origen, distancia, distanciakm, tarifa);
+        Porcentaje = porcentaje;
     }
-    public double obtenerAtributo(){
-        return atributo;
+
+    public void establecerPorcentaje(double n) {
+        Porcentaje = n;
     }
-    
+
     @Override
-    public void establecerValorPasaje(){
-        valorPasaje = (numDistancia*0.10)+(tarifaBase-(tarifaBase*(atributo/100)));
+    public void establecerValPasaje() {
+        valorPasaje = (distanciaKM * 0.15) + (tarifaBase * (Porcentaje / 100));
+    }
+
+    public double obtenerPorcentaje() {
+        return Porcentaje;
     }
     
     @Override
     public String toString() {
-        String cadena = String.format("Pasaje Transporte Menor de Edad: \n"
-                + "Nombre del pasajero: %s\n"
-                + "Cédula: %s\n"
-                + "Origen: %s\n"
-                + "Destino: %s\n"
-                + "Número de distancia: %.2f\n"
-                + "Tarifa base: %.2f\n"
-                + "Porcentaje adicional: %.2f\n"
-                + "Valor pasaje: %.2f\n", 
-                obtenerNombrePasajero(),obtenerCedula(),obtenerOrigen(),
-                obtenerDestino(),obtenerNumDistancia(),obtenerTarifaBase(),
-                obtenerAtributo(),obtenerValorPasaje()); 
+        String cadena =  String.format("%s\nValor del pasaje: %.2f\n", 
+                super.toString(), 
+                obtenerValPasaje());
         return cadena;
+        
     }
 }
+
