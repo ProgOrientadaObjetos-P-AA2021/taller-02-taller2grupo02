@@ -20,12 +20,15 @@ public abstract class PasajeInterCantonal implements Serializable{
     protected double numDistancia;
     protected double tarifaBase;
     protected double valorPasaje;
-    
-    public PasajeInterCantonal(String n,String c,String ori,String d,double n,
-            double t){
-        
-        
-    }
+
+    public PasajeInterCantonal(String nombrePasajero, String cedula, String origen, String destino, double numDistancia, double tarifaBase) {
+        this.nombrePasajero = nombrePasajero;
+        this.cedula = cedula;
+        this.origen = origen;
+        this.destino = destino;
+        this.numDistancia = numDistancia;
+        this.tarifaBase = tarifaBase;
+    } 
        
     public void establecerNombrePasajero(String tipo){
         nombrePasajero = tipo;
@@ -68,7 +71,7 @@ public abstract class PasajeInterCantonal implements Serializable{
     public double obtenerTarifaBase(){
         return tarifaBase;
     }
-    public abstract void establecerTarifaBase();
+    public abstract void establecerValorPasaje();
      
     public double obtenerValorPasaje(){
         return valorPasaje;
