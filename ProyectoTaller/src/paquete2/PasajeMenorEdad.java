@@ -50,5 +50,4 @@ public class PasajeMenorEdad extends PasajeInterCantonal
                 obtenerValorPasaje()); 
         return cadena;
     }
-  
 }
