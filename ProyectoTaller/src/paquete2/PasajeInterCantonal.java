@@ -11,11 +11,9 @@ import java.io.Serializable;
  *
  * @author reroes
  */
-<<<<<<< HEAD
+
 public abstract class PasajeInterCantonal implements Serializable {
-=======
-public abstract class PasajeInterCantonal implements Serializable{
-    
+
     protected String nombrePasajero;
     protected String cedula;
     protected String origen;
@@ -79,9 +77,7 @@ public abstract class PasajeInterCantonal implements Serializable{
     public double obtenerValorPasaje(){
         return valorPasaje;
     }
->>>>>>> 9f201383d560599a10ff58847d492e9175466b13
-    
-   
+
     @Override
     public String toString(){
         return String.format("Pasaje.");
