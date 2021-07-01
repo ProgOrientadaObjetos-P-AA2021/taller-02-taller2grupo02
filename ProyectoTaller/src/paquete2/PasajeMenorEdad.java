@@ -16,11 +16,12 @@ public class PasajeMenorEdad extends PasajeInterCantonal
     
     private double atributo;
 
-    public PasajeMenorEdad(String n, String c, String ori, String d, double n, double t) {
-        super(n, c, ori, d, n, t);
-    }
-    
-    
+    public PasajeMenorEdad(double atributo, String nombrePasajero, 
+            String cedula, String origen, String destino, 
+            double numDistancia, double tarifaBase) {
+        super(nombrePasajero, cedula, origen, destino, numDistancia, tarifaBase);
+        this.atributo = atributo;
+    }  
     
     public void establecerAtributo(double tipo){
         atributo = tipo;
@@ -29,8 +30,25 @@ public class PasajeMenorEdad extends PasajeInterCantonal
         return atributo;
     }
     
+    @Override
     public void establecerValorPasaje(){
         valorPasaje = (numDistancia*0.10)+(tarifaBase-(tarifaBase*(atributo/100)));
     }
     
+    @Override
+    public String toString() {
+        String cadena = String.format("Pasaje Transporte Menor de Edad: \n"
+                + "Nombre del pasajero: %s\n"
+                + "Cédula: %s\n"
+                + "Origen: %s\n"
+                + "Destino: %s\n"
+                + "Número de distancia: %.2f\n"
+                + "Tarifa base: %.2f\n"
+                + "Valor Base: %.2f\n", 
+                obtenerNombrePasajero(),obtenerCedula(),obtenerOrigen(),
+                obtenerDestino(),obtenerNumDistancia(),obtenerTarifaBase(),
+                obtenerValorPasaje()); 
+        return cadena;
+    }
+  
 }
