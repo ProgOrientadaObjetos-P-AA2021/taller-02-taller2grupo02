@@ -13,7 +13,66 @@ import java.io.Serializable;
  */
 public abstract class PasajeInterCantonal implements Serializable{
     
+    protected String nombrePasajero;
+    protected String cedula;
+    protected String origen;
+    protected String destino;
+    protected double numDistancia;
+    protected double tarifaBase;
+    protected double valorPasaje;
     
+    public PasajeInterCantonal(String n,String c,String ori,String d,double n,
+            double t){
+        
+        
+    }
+       
+    public void establecerNombrePasajero(String tipo){
+        nombrePasajero = tipo;
+    }
+    public String obtenerNombrePasajero(){
+        return nombrePasajero;
+    }
+    
+    public void establecerCedula(String tipo){
+        cedula = tipo;
+    }
+    public String obtenerCedula(){
+        return cedula;
+    }
+    
+    public void establecerOrigen(String tipo){
+        origen = tipo;
+    }
+    public String obtenerOrigen(){
+        return origen;
+    }
+    
+    public void establecerDestino(String tipo){
+        destino = tipo;
+    }
+    public String obtenerDestino(){
+        return destino;
+    }
+    
+    public void establecerNumDistancia(double tipo){
+        numDistancia = tipo;
+    }
+    public double obtenerNumDistancia(){
+        return numDistancia;
+    }
+    
+    public void establecerTarifaBase(double tipo){
+        tarifaBase = tipo;
+    }
+    public double obtenerTarifaBase(){
+        return tarifaBase;
+    }
+    public abstract void establecerTarifaBase();
+     
+    public double obtenerValorPasaje(){
+        return valorPasaje;
+    }
     
     @Override
     public String toString(){
