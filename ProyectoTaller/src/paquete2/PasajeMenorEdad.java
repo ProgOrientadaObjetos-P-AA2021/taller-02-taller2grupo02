@@ -44,10 +44,11 @@ public class PasajeMenorEdad extends PasajeInterCantonal
                 + "Destino: %s\n"
                 + "Número de distancia: %.2f\n"
                 + "Tarifa base: %.2f\n"
-                + "Valor Base: %.2f\n", 
+                + "Porcentaje adicional: %.2f\n"
+                + "Valor pasaje: %.2f\n", 
                 obtenerNombrePasajero(),obtenerCedula(),obtenerOrigen(),
                 obtenerDestino(),obtenerNumDistancia(),obtenerTarifaBase(),
-                obtenerValorPasaje()); 
+                obtenerAtributo(),obtenerValorPasaje()); 
         return cadena;
     }
 }
