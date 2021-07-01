@@ -11,10 +11,9 @@ import java.io.Serializable;
  *
  * @author reroes
  */
-public abstract class PasajeInterCantonal implements Serializable{
+public abstract class PasajeInterCantonal implements Serializable {
     
-    
-    
+   
     @Override
     public String toString(){
         return String.format("Pasaje.");
